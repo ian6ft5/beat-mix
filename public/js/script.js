@@ -116,11 +116,17 @@ function clearAll() {
 
 //synth grid
 function getNeighborPads(x, y, size) {
-    let neighborPads = []; 
-    if (x > 0) {neighborPads.push([(x - 1), y]);} //left neighbor
-    if (y > 0) {neighborPads.push([x, (y - 1)]);} //bottom
-    if (x < (size - 1)) {neighborPads.push([(x + 1), y]);} //right
-    if (y < (size - 1)) {neighborPads.push([x, (y + 1)]);} //top
+    let neighborPads = [];
+
+    //verify valid input
+    if (x < 0 || x >= size || y < 0 || y >= size) {
+        return neighborPads;
+    }
+
+    if (x > 0 && x < size) {neighborPads.push([(x - 1), y]);} //left neighbor
+    if (y > 0 && y < size) {neighborPads.push([x, (y - 1)]);} //bottom
+    if (x < (size - 1) && x >= 0) {neighborPads.push([(x + 1), y]);} //right
+    if (y < (size - 1) && y >= 0) {neighborPads.push([x, (y + 1)]);} //top
 
     return neighborPads;
 }
