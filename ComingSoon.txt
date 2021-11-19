@@ -1,0 +1,1 @@
+So I'm not able to host the node.js server to actually let the program run like it should, so I'm taking this opportunity for a crash course in electron.js to wrap it into an exectuable to be downloaded and run locally.
